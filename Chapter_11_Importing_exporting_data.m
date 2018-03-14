@@ -65,6 +65,22 @@ table_01 = cell2table(cell_array);
 
 writetable(table_01, 'export_csv_2.csv', 'WriteVariableNames', false);
 
-%% Exporting iomages 
+%% Exporting images 
 
 % http://mathworks.com/help/matlab/import_export/supported-file-formats.html
+
+% Creating bar;
+
+bar_data = [34,55,67;12,7,99;35,27,47];
+plot_bar = bar(bar_data,'stacked');
+
+%save image
+saveas(gcf(),'bar_1.jpg','jpg');
+
+%% Importing image 
+
+import_image = imread('bar_1.jpg');
+
+%dispaly image
+figure();
+image(import_image);

@@ -59,4 +59,24 @@ csvwrite('export_csv_1.csv', export_me);
 
 % before exporting data - data must be feed as matrix 
 % cell2mat
-%
+
+cell_array = {'Mike', 42, true;'Nina', 32,true;'Anton', 25, false};
+table_01 = cell2table(cell_array);
+
+writetable(table_01, 'export_csv_2.csv', 'WriteVariableNames', false);
+
+%% Exporting images 
+
+% http://mathworks.com/help/matlab/import_export/supported-file-formats.html
+
+% Creating bar;
+
+bar_data = [34,55,67;12,7,99;35,27,47];
+plot_bar = bar(bar_data,'stacked');
+
+%save image
+saveas(gcf(),'bar_1.jpg','jpg');
+
+%% Importing image 
+
+import_image = imread();
